@@ -23,7 +23,7 @@ function signUp(e){
             })
             .then(() => {
               setTimeout(function(){
-                      window.location.replace("homescreen.html");
+                      window.location.replace("index.html");
                   }, 1)
             })
         }).catch((error) => {
@@ -128,7 +128,7 @@ function signOut(e){
           //localStorage.setItem("uid", uid);
           alert("Signed Out Succesfully");
           setTimeout(function(){
-              window.location.replace("homescreen.html");
+              window.location.replace("index.html");
             }, 1);
         }).catch((error) => {
             // Handle Errors here.
