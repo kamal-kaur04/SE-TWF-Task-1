@@ -1,0 +1,81 @@
+<!-- Sign In Screen -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Website Title -->
+    <title>Sign In with Firebase</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="styles/homescreen.css" rel="stylesheet">
+
+  </head>
+  <body data-spy="scroll" data-target=".fixed-top">
+
+
+<div class= "login-card">
+          <div class="box">
+
+      <div class="title"><b>Hello! <br> Sign In to your Account</b></div> <br>
+
+<form method="post" onsubmit=" return signIn(event)">
+      <div class="inputBox">
+
+	 <input type="email" name="name" id="emailSi" required onkeyup="this.setAttribute('value', this.value);" value="">
+         <label>Email</label>
+      </div>
+
+      <div class="inputBox">
+<input type="password" name="pass" id="passSi" required onkeyup="this.setAttribute('value', this.value);" value="">
+         <label>Password</label>
+	 <!--<span class="error"><p id="email_error"></p></span>-->
+      </div>
+
+      <a href="" class="passForgot">Forgot your password?</a><br><br>
+
+      <input type="submit" name="sign-in" value="Sign In"> &nbsp &nbsp
+      <a href="signup.html" class = "signup-btn" style="">Sign Up</a>
+
+</form>
+
+   </div>
+ </div>
+
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+
+ <script>
+   // Your web app's Firebase configuration
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+   var firebaseConfig = {
+     apiKey: "AIzaSyCiWTTwVGh6DdPF6E62jcgX2XNwvazXB0I",
+     authDomain: "authentication-6451f.firebaseapp.com",
+     databaseURL: "https://authentication-6451f-default-rtdb.firebaseio.com",
+     projectId: "authentication-6451f",
+     storageBucket: "authentication-6451f.appspot.com",
+     messagingSenderId: "483890114463",
+     appId: "1:483890114463:web:a570cfdd46a188c78017aa",
+     measurementId: "G-5HK4Z9CH85"
+   };
+   // Initialize Firebase
+   firebase.initializeApp(firebaseConfig);
+   firebase.analytics();
+
+   const db = firebase.firestore();
+ </script>
+
+<!-- Custom Javascript-->
+<script src="js/dynamic.js" charset="utf-8"></script>
+</body>
+</html>
