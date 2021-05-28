@@ -1,5 +1,4 @@
 function userDashboard(){
-          //e.preventDefault();
 
           uid = localStorage.getItem("uid");
           console.log(uid);
@@ -14,9 +13,9 @@ function userDashboard(){
             var dob = items.userDOB;
             var place = items.Place;
             $("#valueDOB").append(dob);
-            console.log(dob);
+            //console.log(dob);
             $("#valuePlace").append(place);
-            console.log(place);
+            //console.log(place);
             hideSpinner();
       });
         }).catch((error) => {
@@ -26,7 +25,6 @@ function userDashboard(){
             console.log(errorMessage);
         });
       }
-        //hideSpinner();
 }
 
 userDashboard();

@@ -3,14 +3,13 @@ function signUp(e){
     e.preventDefault();
     var userEmail = document.getElementById("email").value;
     var userPassword = document.getElementById("pass").value;
-    // var hash = CryptoJS.MD5(userPassword);
-    // userPassword.value=hash;
+
     var hashObj = new jsSHA("SHA-1", "TEXT", {numRounds: 1});
     hashObj.update(userPassword);
     var hash = hashObj.getHash("HEX");
     userPassword = hash;
-    console.log(userPassword);
-    console.log(hash);
+    // console.log(userPassword);
+    // console.log(hash);
 
         firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then((success) => {
             alert("Registered Succesfully!");
@@ -129,7 +128,7 @@ function signOut(e){
 
         firebase.auth().signOut().then(function() {
           localStorage.removeItem("uid");
-          //localStorage.setItem("uid", uid);
+
           alert("Signed Out Succesfully");
           setTimeout(function(){
               window.location.replace("index.html");
