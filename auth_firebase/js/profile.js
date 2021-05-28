@@ -17,6 +17,7 @@ function userDashboard(){
             console.log(dob);
             $("#valuePlace").append(place);
             console.log(place);
+            hideSpinner();
       });
         }).catch((error) => {
             // Handle Errors here.
@@ -25,7 +26,13 @@ function userDashboard(){
             console.log(errorMessage);
         });
       }
-      //hideSpinner();
+        //hideSpinner();
 }
 
 userDashboard();
+
+
+function hideSpinner() {
+    // Animate loader off screen
+  $(".se-pre-con").fadeOut("slow");
+   }

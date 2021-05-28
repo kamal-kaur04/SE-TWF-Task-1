@@ -3,6 +3,14 @@ function signUp(e){
     e.preventDefault();
     var userEmail = document.getElementById("email").value;
     var userPassword = document.getElementById("pass").value;
+    // var hash = CryptoJS.MD5(userPassword);
+    // userPassword.value=hash;
+    var hashObj = new jsSHA("SHA-1", "TEXT", {numRounds: 1});
+    hashObj.update(userPassword);
+    var hash = hashObj.getHash("HEX");
+    userPassword = hash;
+    console.log(userPassword);
+    console.log(hash);
 
         firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then((success) => {
             alert("Registered Succesfully!");
@@ -40,6 +48,10 @@ function signIn(e){
     e.preventDefault();
     var userSIEmail = document.getElementById("emailSi").value;
     var userSIPassword = document.getElementById("passSi").value;
+    var hashObj = new jsSHA("SHA-1", "TEXT", {numRounds: 1});
+    hashObj.update(userSIPassword);
+    var hash = hashObj.getHash("HEX");
+    userSIPassword = hash;
 
         firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
           var user = firebase.auth().currentUser;
@@ -110,14 +122,6 @@ function saveProfile(e){
 });
 
 }
-
-  // $(window).load(function () {
-  //     // Animate loader off screen
-  //   $(".se-pre-con").fadeOut("slow");
-  //    });
-// function hideSpinner() {
-//     $(".se-pre-con").fadeOut("slow");
-//   }
 
 // xxxxxxxxxx Sign Out xxxxxxxxxx
 function signOut(e){

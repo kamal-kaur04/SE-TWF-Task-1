@@ -1,6 +1,5 @@
 body {
 background: skyblue;
-/*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,191,216,1) 0%, rgba(33,198,224,1) 69%, rgba(0,123,255,1) 100%);*/
 }
 
 
@@ -17,14 +16,15 @@ background: skyblue;
 }
 
 .box {
-position: absolute;
-  margin-left: 6%;
-  top: 250px; }
+  position: relative;
+  margin: 8%;
+  top: 100px; }
 
 .title {
  color: #cf1d52;
-font-size: 35px;
+font-size: 2vw;
 line-height: 1.4;
+text-align: center;
 }
 
 .box .inputBox {
@@ -86,20 +86,15 @@ line-height: 1.4;
   background-color: #ad1845;
 }
 
-.box .passForgot {
-text-decoration: None;
-float: right;
-font-size:20px;
-}
-
 .signup-btn {
   color: #cf1d52;
-  padding:16px;
+  padding:12px;
   border-radius: 8px;
   text-decoration: None;
   font-weight: bold;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
   transition: 0.3s;
+  margin-top: 30%;
 }
 
 .signup-btn:hover{
@@ -123,4 +118,24 @@ font-size:20px;
 	height: 100%;
 	z-index: 9999;
 	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+}
+
+@media only screen and (max-width: 480px) {
+  .login-card {
+    width: 100%; /* The width is 100%, when the viewport is 480px or smaller */
+    margin-left: 0%;
+    height: 500px;
+  }
+  .box input[type="submit"], .signup-btn {
+    width: 90%;
+  }
+  .title{
+    font-size: 5vw;
+  }
+  .signup-btn {
+    position: relative;
+    padding-left: 122px;
+    padding-right: 122px;
+    top: 30px;
+  }
 }
