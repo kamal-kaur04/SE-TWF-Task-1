@@ -37,7 +37,13 @@ function signUp(e){
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(errorMessage);
+            //console.log(errorMessage);
+            //console.log(errorCode);
+            if(errorCode=="auth/email-already-in-use"){
+            alert("The email address already exists!! Try Signing In.");
+          } else {
+          alert(errorMessage);
+        }
         });
 }
 
@@ -87,7 +93,12 @@ function signIn(e){
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(errorMessage);
+
+            if(errorCode == "auth/user-not-found"){
+            alert("User Not Found!! Try Signing Up.");
+          } else{
+              alert(errorMessage);
+          }
         });
 }
 
