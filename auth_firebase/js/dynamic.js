@@ -24,7 +24,7 @@ function signUp(e){
             .then(() => {
               setTimeout(function(){
                       window.location.replace("homescreen.html");
-                  }, 10)
+                  }, 1)
             })
         }).catch((error) => {
             // Handle Errors here.
@@ -65,7 +65,7 @@ function signIn(e){
             if (!isProfile) {
               setTimeout(function(){
                       window.location.replace("saveprofile.html");
-              }, 10)
+              }, 1)
             } else {
               window.location.replace("profile.html");
             }
@@ -101,7 +101,7 @@ function saveProfile(e){
     .then(() => {
       setTimeout(function(){
               window.location.replace("profile.html");
-          }, 10)
+          }, 1)
     }).catch((error) => {
     // Handle Errors here.
     var errorCode = error.code;
@@ -129,7 +129,7 @@ function signOut(e){
           alert("Signed Out Succesfully");
           setTimeout(function(){
               window.location.replace("homescreen.html");
-            }, 10);
+            }, 1);
         }).catch((error) => {
             // Handle Errors here.
             var errorCode = error.code;
